@@ -1,0 +1,172 @@
+@keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  .showEma {
+    display: inline-block; /* Ensure the element is inline-block to apply width */
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid black; /* Add a solid border to simulate the cursor */
+    animation: typing 2s steps(100, end) forwards, /* Faster and smoother typing */
+               blink 0.75s step-end infinite; /* Add cursor blink effect */
+  }
+  
+  .showTha {
+    display: inline-block; /* Ensure the element is inline-block to apply width */
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid black; /* Add a solid border to simulate the cursor */
+    animation: typing 2s steps(100, end) forwards, /* Faster and smoother typing */
+               blink 0.75s step-end infinite; /* Add cursor blink effect */
+  }
+  .showTha:focus{
+    outline:0;
+  }
+  .firstpage {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  min-height: 100vh;
+  width: 100vw;
+  position: relative; /* Add this to make position:absolute inside work relative to this */
+}
+
+.firstpage h2 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10.66vh;
+  margin: 0px;
+  color:white;
+}
+.firstpage p {
+  font-family: "JetBrains Mono", monospace;
+  width: 57.5vw;
+  font-size: 3.75vh;
+  margin: 0px;
+  text-align: justify;
+  color:white;
+}
+.contentText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 50px;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.bgimage {
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 50%;
+  height: 100vh;
+  width: 100vw;
+  transform: translateX(-50%);
+  object-fit: cover;
+  filter: brightness(60%);
+}
+.overlay {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #385cff,
+    #f950b8
+  );
+  opacity: 0.5;
+  pointer-events: none;
+}
+.mir{
+    color:rgb(255, 75, 75);
+}
+.dp img {
+  width: 325px;
+  height: 325px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 50px;
+  transform: rotate(2deg);
+}
+.firstpage button {
+  position: absolute; /* or absolute */
+  bottom: 0;
+  font-size: 30px;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+  z-index: 0;
+  border: none;
+  background-color: transparent;
+  color:white;
+  
+}
+.firstpage button:focus {
+  outline: none;
+}
+.secondPage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Changed to flex-start to allow for growing content */
+  min-height: 100vh; /* Ensures the page takes at least the full viewport height */
+  background-color: #121212;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 2.75vh;
+  padding-bottom: 1vh;
+  overflow: visible; /* Ensure content doesn't overflow */
+}
+
+.textBoxnf {
+  width: 83%; /* Adjust the width as needed */
+  align-items: center;
+  padding-top:4.5vh;
+  margin: 5vh auto; /* Center and add margin */
+  text-align: justify;
+  color: white;
+  padding-bottom: 10vh; /* Ensure space for content padding */
+}
+
+.textBox input {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 2.75vh;
+  color:rgb(255, 75, 75);
+  border: 0px;
+  background-color: transparent;
+  width: 85%;
+}
+
+.textBox input:focus {
+  outline: none;
+}
+
+.text-box {
+  padding: 10px;
+  font-size: 16px;
+}
+.footer{
+    position: absolute;
+    bottom:0;
+}
+.navi{
+    position:fixed;
+    top: 0;
+    left:0;
+    z-index: 5;
+}
