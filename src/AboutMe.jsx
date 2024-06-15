@@ -3,6 +3,7 @@ import * as styles from "./AboutMe.module.css";
 import Footer from "./components/footer.jsx";
 import 'smoothscroll-polyfill';
 import Navbar from "./components/navbar.jsx";
+import Cursor from './components/cursor.jsx';
 
 window.__forceSmoothScrollPolyfill__ = true;
 
@@ -32,6 +33,7 @@ function App() {
   }, 2000);
   // inputRef.current.focus();
 };
+
 
   const handleNameKeyPress = (e) => {
     if (e.key === 'Enter' && name.trim() !== '') {
@@ -80,13 +82,14 @@ function App() {
 
   return (
     <>
+    <Cursor />
       <Navbar className={styles.navi}/>
       <div className={styles.firstpage}>
-        <img className={styles.bgimage} src="bits-goa.jpeg" />
+     <img className={styles.bgimage} src="bits-goa.jpeg" /> 
         <div className={styles.content}>
           <div className={styles.contentText}>
             <div className={styles.overlay} />
-            <h2>Hi. I am Shrey.</h2>
+            <h2>Hi. I am<span className={styles.shrey}> Shrey.</span></h2>
             <p>
               <b>
                 I'm a second-year undergrad at BITS Pilani - Goa, pursuing BE in
