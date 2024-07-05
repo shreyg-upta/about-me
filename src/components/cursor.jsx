@@ -1,51 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import * as styles from '../styles/cursor.module.css';
 import { motion } from 'framer-motion';
 
 function Cursor() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState('default');
   const [isPointer, setIsPointer] = useState(false);
+  const [targetPosition, setTargetPosition] = useState({ x: 0, y: 0 });
+  const [currentPosition, setCurrentPosition] = useState({ x: 0, y: 0 });
+  const requestRef = useRef(null);
+
+  const lerp = (start, end, factor) => start + (end - start) * factor;
 
   useEffect(() => {
-    const mouseMove = (e) => {
+    const handleMouseMove = (e) => {
+      setTargetPosition({ x: e.clientX, y: e.clientY });
       checkCursorPointer(e);
-      setMousePosition({ x: e.clientX, y: e.clientY });
     };
-    window.addEventListener('mousemove', mouseMove);
+
+    window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
-      window.removeEventListener('mousemove', mouseMove);
+      window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
   useEffect(() => {
     let timer;
     if (!isPointer && cursorVariant === 'text') {
-      timer = setTimeout(() => {
         setCursorVariant('default');
-      }, 500);
     }
-    return () => clearTimeout(timer);
   }, [isPointer, cursorVariant]);
-
-  const variants = {
-    default: {
-      x: mousePosition.x - 15,
-      y: mousePosition.y - 15,
-      height: 20,
-      width: 20,
-      mixBlendMode: 'difference',
-    },
-    text: {
-      x: mousePosition.x - 55,
-      y: mousePosition.y - 55,
-      height: 100,
-      width: 100,
-      backgroundColor: 'white',
-      mixBlendMode: 'difference',
-    },
-  };
 
   const checkCursorPointer = (e) => {
     const element = document.elementFromPoint(e.clientX, e.clientY);
@@ -61,8 +45,50 @@ function Cursor() {
     }
   };
 
+  const smoothCursor = () => {
+    setCurrentPosition(prevPosition => ({
+      x: lerp(prevPosition.x, targetPosition.x, 0.4),
+      y: lerp(prevPosition.y, targetPosition.y, 0.4)
+    }));
+
+    requestRef.current = requestAnimationFrame(smoothCursor);
+  };
+
+  useEffect(() => {
+    requestRef.current = requestAnimationFrame(smoothCursor);
+    return () => cancelAnimationFrame(requestRef.current);
+  }, [targetPosition]);
+
+  const variants = {
+    default: {
+      height: 20,
+      width: 20,
+      mixBlendMode: 'difference',
+      transition: { duration: 0.25, ease: 'easeInOut' } // Smooth transition over 1 second
+
+    },
+    text: {
+      height: 100,
+      width: 100,
+      backgroundColor: 'white',
+      mixBlendMode: 'difference',
+      transition: { duration: 0.25, ease: 'easeInOut' } // Smooth transition over 1 second
+    },
+  };
+
   return (
-    <motion.div className={styles.cursor} variants={variants} animate={cursorVariant}>
+    <motion.div
+      className={styles.cursor}
+      variants={variants}
+      animate={cursorVariant}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        pointerEvents: 'none',
+        transform: `translate3d(${currentPosition.x - (cursorVariant === 'text' ? 53.5 : 13.5)}px, ${currentPosition.y - (cursorVariant === 'text' ? 53.5 : 13.5)}px, 0)`
+      }}
+    >
       <div className={styles.cursor__ball} />
     </motion.div>
   );

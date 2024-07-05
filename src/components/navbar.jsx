@@ -4,6 +4,7 @@ import * as styles from '../styles/navbar.module.css';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [showHeader, setShowHeader] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // State for mobile menu
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,8 +30,12 @@ export default function Navbar() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth' // for smooth scrolling
+      behavior: 'smooth'
     });
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
   };
 
   return (
@@ -42,13 +47,29 @@ export default function Navbar() {
           </div>
         </div>
         <div className={styles.navbar}>
-          <ul>
+          {/* Desktop Menu */}
+          <ul className={`${styles.desktopMenu}`}>
             <li><a href="https://in.linkedin.com/in/shreyg-upta">Experience</a></li>
             <li><a href="https://github.com/shreyg-upta">Projects</a></li>
             <li><a href="https://codeforces.com/profile/shrey71">CP</a></li>
             <li><a href="https://detrace.systems/contact">Connect</a></li>
           </ul>
+
+          {/* Mobile Menu Button */}
+          <button className={styles.mobileMenuButton} onClick={toggleMobileMenu}>
+            <span>&#8230;</span>
+          </button>
         </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`${styles.mobileMenuOverlay} ${mobileMenuOpen ? styles.overlayActive : ''}`}>
+        <ul>
+          <li><a href="https://in.linkedin.com/in/shreyg-upta">Experience</a></li>
+          <li><a href="https://github.com/shreyg-upta">Projects</a></li>
+          <li><a href="https://codeforces.com/profile/shrey71">CP</a></li>
+          <li><a href="https://detrace.systems/contact">Connect</a></li>
+        </ul>
       </div>
     </div>
   );
