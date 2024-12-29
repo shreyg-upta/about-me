@@ -1,0 +1,254 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #121212;
+  color: #ffffff;
+  padding: 10vh 5vw;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: row; /* Profile on the left, content on the right */
+  width: 100%;
+  gap: 20px;
+
+  
+
+  
+}
+.profileSection {
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.profileCard {
+  background-color: #212121;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8); /* Deeper shadow for more depth */
+}
+
+.profileImg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.profileImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 7.5%;
+  /* margin-bottom: 15px; */
+  border: 3px solid rgb(255, 75, 75); /* Red border for the avatar */
+}
+
+.name {
+  font-size: 1.5em;
+  color: rgb(255, 75, 75); /* Red color for the name */
+  cursor: help;
+}
+.profileImg{
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  justify-content: flex-start;
+  gap: 20px;
+  
+}
+
+.bio {
+  font-size: 0.9em;
+  color: #e0e0e0; /* Slightly muted white for bio */
+  margin: 25px 0 25px 0; 
+}
+
+.links {
+  font-size: 0.8em;
+  color: #b0b0b0;
+
+}
+
+.problemStats p {
+  margin: 5px 0;
+  color: #e0e0e0;
+}
+.profileSection a img{
+  width: 20px;
+  height: 20px;
+}
+.red{
+  color: rgb(255, 75, 75);
+  margin: 0;
+  cursor: pointer;
+}
+.profileSection a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  /* color: rgb(255, 75, 75); */
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/* Content Section */
+.contentSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Stats Section */
+.statsSection {
+  display: flex;
+  justify-content: space-between;
+  gap: 0px;
+  flex-wrap: wrap; /* Adjusts layout for smaller screens */
+  margin-bottom: 20px;
+}
+
+.statCard {
+  background-color: #212121;
+  border-radius: 10px;
+  padding: 20px;
+  width: 28%;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Tab Section */
+.tabSection {
+  background-color: #212121;
+  border-radius: 10px;
+  padding: 20px;
+  width: 96%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.tabHeaders {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.tabButton {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1em;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+
+.tabButton:hover {
+  border-bottom: 2px solid rgb(255, 75, 75);
+}
+.tabButton:focus {
+  outline: none;
+}
+
+.activeTab {
+  border-bottom: 2px solid rgb(255, 75, 75);
+  background-color: #333333;
+}
+
+.tabContent ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tabContent li {
+  padding: 8px 0;
+  border-bottom: 1px solid #333333;
+}
+.tabLogo{
+  width: 20px;
+  height: 20px;
+  margin-right: 7.5px;
+  vertical-align: middle; /* Aligns image to the middle of the text */
+
+}
+
+.calendar {
+  margin-bottom: 20px;
+  text-align: flex-start;
+  color:aliceblue;
+  background-color: #212121;
+  border-radius: 10px;
+  padding: 20px;
+  width: 96%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+
+
+
+
+.colorEmpty {
+  fill: #ebedf0; /* No contributions */
+}
+
+.colorScale0 {
+  fill: #ebedf0; /* Lightest green */
+}
+
+.colorScale1 {
+  fill: #9be9a8; /* Light green */
+}
+
+.colorScale2 {
+  fill: #40c463; /* Medium green */
+}
+
+.colorScale3 {
+  fill: #30a14e; /* Dark green */
+}
+
+.colorScale4 {
+  fill: #216e39; /* Darkest green */
+}
+
+.filterBar {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.filterBtn {
+  background: none;
+  border: 2px solid transparent;
+  margin: 0 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.filterBtn.colorScale0 {
+  border-color: #ebedf0;
+}
+
+.filterBtn.colorScale1 {
+  border-color: #9be9a8;
+}
+
+.filterBtn.colorScale2 {
+  border-color: #40c463;
+}
+
+.filterBtn.colorScale3 {
+  border-color: #30a14e;
+}
+
+.filterBtn.colorScale4 {
+  border-color: #216e39;
+}

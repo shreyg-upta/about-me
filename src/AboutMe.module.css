@@ -1,96 +1,47 @@
-@keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-  
-  @keyframes blink {
-    50% {
-      border-color: transparent;
-    }
-  }
- 
-  .cursor{
-    z-index: 10000000;
-    background-color: transparent;
-    border: 3px solid white;
-    height: 20px;
-    width:20px;
-    border-radius: 50%;
-    position: fixed;
-    top:0;
-    left:0;
-    pointer-events: none; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .cursor__ball{
-    background-color: white;
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-  }
-  .showEma {
-    display: inline-block; /* Ensure the element is inline-block to apply width */
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid black; /* Add a solid border to simulate the cursor */
-    animation: typing 2s steps(100, end) forwards, /* Faster and smoother typing */
-               blink 0.75s step-end infinite; /* Add cursor blink effect */
-  }
-  
-  .showTha {
-    display: inline-block; /* Ensure the element is inline-block to apply width */
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid black; /* Add a solid border to simulate the cursor */
-    animation: typing 2s steps(100, end) forwards, /* Faster and smoother typing */
-               blink 0.75s step-end infinite; /* Add cursor blink effect */
-  }
-  .showTha:focus{
-    outline:0;
-  }
-  .firstpage {
+/* AboutMe.module.css */
+
+.firstpage {
   display: flex;
-  justify-content: center; /* Horizontally center */
-  align-items: center; /* Vertically center */
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
   width: 100vw;
-  position: relative; /* Add this to make position:absolute inside work relative to this */
+  position: relative;
 }
 
 .firstpage h2 {
   font-family: "JetBrains Mono", monospace;
   font-size: 10.66vh;
   margin: 0px;
-  color:white;
+  color: white;
 }
+
 .firstpage p {
   font-family: "JetBrains Mono", monospace;
   width: 57.5vw;
   font-size: 3.75vh;
   margin: 0px;
   text-align: justify;
-  color:white;
+  color: white;
 }
+
 .contentText {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 50px;
 }
+
 .content {
   display: flex;
   flex-direction: row;
   gap: 20px;
 }
-.shrey{
-  cursor:help;
+
+.shrey {
+  cursor: help;
 }
+
 .bgimage {
   position: absolute;
   z-index: -2;
@@ -102,6 +53,7 @@
   object-fit: cover;
   filter: brightness(60%);
 }
+
 .overlay {
   position: absolute;
   z-index: -1;
@@ -109,18 +61,16 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(
-    to bottom,
-    #385cff,
-    rgb(255, 27, 27)
-  );
+  background: linear-gradient(to bottom, #385cff, rgb(255, 27, 27));
   opacity: 0.5;
   pointer-events: none;
 }
-.mir{
-    color:rgb(255, 75, 75);
-    cursor: help;
+
+.mir {
+  color: rgb(255, 75, 75);
+  cursor: help;
 }
+
 .dp img {
   width: 325px;
   height: 325px;
@@ -129,8 +79,9 @@
   margin: 50px;
   transform: rotate(2deg);
 }
+
 .firstpage button {
-  position: absolute; /* or absolute */
+  position: absolute;
   bottom: 0;
   font-size: 30px;
   left: 50%;
@@ -138,40 +89,41 @@
   z-index: 0;
   border: none;
   background-color: transparent;
-  color:white;
-  
+  color: white;
 }
+
 .firstpage button:focus {
   outline: none;
 }
+
 .secondPage {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Changed to flex-start to allow for growing content */
-  min-height: 100vh; /* Ensures the page takes at least the full viewport height */
+  justify-content: flex-start;
+  min-height: 100vh;
   background-color: #121212;
   font-family: "JetBrains Mono", monospace;
   font-size: 2.75vh;
   padding-bottom: 1vh;
-  overflow: visible; /* Ensure content doesn't overflow */
+  overflow: visible;
 }
 
 .textBoxnf {
-  width: 83%; /* Adjust the width as needed */
+  width: 83%;
   align-items: center;
-  padding-top:4.5vh;
-  margin: 5vh auto; /* Center and add margin */
+  padding-top: 4.5vh;
+  margin: 5vh auto;
   text-align: justify;
   color: white;
-  padding-bottom: 10vh; /* Ensure space for content padding */
+  padding-bottom: 10vh;
 }
 
 .textBox input {
   font-family: "JetBrains Mono", monospace;
   font-size: 2.75vh;
-  color:rgb(255, 75, 75);
+  color: rgb(255, 75, 75);
   border: 0px;
   background-color: transparent;
   width: 85%;
@@ -185,13 +137,66 @@
   padding: 10px;
   font-size: 16px;
 }
-.footer{
-    position: absolute;
-    bottom:0;
+
+.footer {
+  position: absolute;
+  bottom: 0;
 }
-.navi{
-    position:fixed;
-    top: 0;
-    left:0;
-    z-index: 5;
+
+.navi {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .dp img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .firstpage h2 {
+    font-size: 8vh;
+    position: relative; /* Ensure the paragraph remains in the flow */
+
+  }
+  .contentText h2 .shrey {
+    display: block; /* Ensure "Shrey" is on a new line */
+  }
+
+  /* Position DP over the paragraph */
+  .dp {
+    position: absolute;
+    top: 10px; /* Adjust top position */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Ensure DP is above the paragraph */
+  }
+
+  /* Ensure h2 is relatively positioned after the image */
+  .contentText h2 {
+    position: relative;
+    z-index: 0; /* Ensure it's behind the DP image */
+  }
+
+  .firstpage p {
+    position: relative; /* Ensure the paragraph remains in the flow */
+    z-index: 0; /* Ensure the paragraph is below the DP */
+  }
+
+  .textBoxnf {
+    width: 95%;
+  }
+
+
+
+  .textBox input {
+    font-size: 2.5vh;
+  }
 }
