@@ -4,8 +4,11 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   optimizeDeps: {
-    include: ["react-tooltip"],
+    include: [
+      'react-tooltip',
+      'regenerator-runtime',  // Add this line to include regenerator-runtime
+    ],
   },
   plugins: [react()],
-  base: '/about-me/'  // Set the base path to your repository name
+  base: '/about-me/',  // Set the base path to your repository name
 });
