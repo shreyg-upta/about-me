@@ -10,12 +10,12 @@ import Talk from './Talk'
 function App() {
   return (
     <Routes>
-      <Route path="/about-me/" element={<AboutMe />} />
-    <Route path="/about-me/experience/" element={<Experience />} />
-    <Route path="/about-me/projects/" element={<Work />} />
-    <Route path="/about-me/contact/" element={<Contact />} />
-    <Route path="/about-me/cp/" element={<CP />} />
-    <Route path="/about-me/talk/" element={<Talk />} />
+      <Route path="/" element={<AboutMe />} />
+    <Route path="/experience/" element={<Experience />} />
+    <Route path="/projects/" element={<Work />} />
+    <Route path="/contact/" element={<Contact />} />
+    <Route path="/cp/" element={<CP />} />
+    <Route path="/talk/" element={<Talk />} />
     </Routes>
   )
 }
