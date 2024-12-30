@@ -10,7 +10,6 @@ export default defineConfig({
       'react-tooltip',
     ],
   },
-  plugins: [react()],
   build: {
     rollupOptions: {
       output: {
