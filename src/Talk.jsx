@@ -1,4 +1,4 @@
-import 'regenerator-runtime/runtime';
+// import 'regenerator-runtime/runtime';
 import React, { useState, useEffect, useRef } from "react";
 import * as styles from "./Talk.module.css";
 import Footer from "./components/footer.jsx";
