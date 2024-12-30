@@ -11,7 +11,7 @@ export default function Navbar() {
   const navigate = useNavigate(); // useNavigate for programmatic navigation
 
   useEffect(() => {
-    if (location.pathname !== "/about-me/") {
+    if (location.pathname !== "/") {
       setShowHeader(true);
     }
     else{
@@ -37,13 +37,13 @@ export default function Navbar() {
   }, []);
 
   const scrollToTop = () => {
-    if (location.pathname === "/about-me/") {
+    if (location.pathname === "/") {
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
     } else {
-      navigate("/about-me/");
+      navigate("/");
     }
   };
 
@@ -62,10 +62,10 @@ export default function Navbar() {
         <div className={styles.navbar}>
           {/* Desktop Menu */}
           <ul className={`${styles.desktopMenu}`}>
-            <li><a href={"Experience"} className={(location.pathname == "/about-me/Experience"? styles.red:styles.white)}>Experience</a></li>
-            <li><a href="Projects" className={(location.pathname == "/about-me/Projects"? styles.red:styles.white)}>Projects</a></li>
-            <li><a href="CP" className={(location.pathname == "/about-me/CP"? styles.red:styles.white)}>CP</a></li>
-            <li><a href="Contact" className={(location.pathname == "/about-me/Contact"? styles.red:styles.white)}>Connect</a></li>
+            <li><a href={"Experience"} className={(location.pathname == "/Experience"? styles.red:styles.white)}>Experience</a></li>
+            <li><a href="Projects" className={(location.pathname == "/Projects"? styles.red:styles.white)}>Projects</a></li>
+            <li><a href="CP" className={(location.pathname == "/CP"? styles.red:styles.white)}>CP</a></li>
+            <li><a href="Contact" className={(location.pathname == "/Contact"? styles.red:styles.white)}>Connect</a></li>
           </ul>
           <a href="talk">
           <img src={chatGPTLogo}/>
