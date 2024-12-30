@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/about-me/', // Set base path to your deployment subpath
+  // base: '/about-me/', // Set base path to your deployment subpath
   optimizeDeps: {
     include: [
       'react-tooltip',
