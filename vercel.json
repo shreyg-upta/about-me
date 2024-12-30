@@ -8,12 +8,10 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "src": "/[^.]+",
+      "dest": "/"
     }
   ],
-
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
 
   "env": {
     "NODE_ENV": "production"
