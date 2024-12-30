@@ -10,5 +10,12 @@ export default defineConfig({
     ],
   },
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
   base: '/about-me/',  // Set the base path to your repository name
 });
