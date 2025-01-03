@@ -113,6 +113,14 @@ while (isBefore(currentDate, endDate)) {
         startDate={startDate}
         endDate={endDate}
         values={values}
+        transformDayElement={(element) => {
+          return React.cloneElement(element, {
+            rx: 2,
+            ry: 2,
+            width: 9.5,  // smaller width
+            height: 9.5  // smaller height
+          });
+        }}
         classForValue={(value) => {
           if (!value || value.count === 0) {
             return styles.colorEmpty;

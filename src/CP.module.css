@@ -195,27 +195,27 @@
 
 
 .colorEmpty {
-  fill: #ebedf0; /* No contributions */
+  fill: #393939; /* No contributions */
 }
 
 .colorScale0 {
-  fill: #ebedf0; /* Lightest green */
+  fill: #82e68e; /* Lightest green */
 }
 
 .colorScale1 {
-  fill: #9be9a8; /* Light green */
+  fill: #5ec86a; /* Light green */
 }
 
 .colorScale2 {
-  fill: #40c463; /* Medium green */
+  fill: #22b83d; /* Medium green */
 }
 
 .colorScale3 {
-  fill: #30a14e; /* Dark green */
+  fill: #0e9730; /* Dark green */
 }
 
 .colorScale4 {
-  fill: #216e39; /* Darkest green */
+  fill: #016620; /* Darkest green */
 }
 
 .filterBar {
@@ -251,4 +251,9 @@
 
 .filterBtn.colorScale4 {
   border-color: #216e39;
+}
+svg.react-calendar-heatmap text {
+  font-size: 1px !important;
+  fill: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }

@@ -21,7 +21,14 @@
     filter: invert(1);
 
 }
-
+.container{
+    padding-top: 10vh;
+    background-color: #292929;
+    height: 90vh;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
 .inputB button{
     background: none;
     border: none;

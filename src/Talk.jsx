@@ -72,7 +72,7 @@ useEffect(() => {
     window.speechSynthesis.speak(value);
   };
   return (
-    <>
+    <div className={styles.container}>
       {/* <PleaseOpenInLaptop /> */}
       <Cursor />
       <Navbar className={styles.navi} />
@@ -149,7 +149,7 @@ useEffect(() => {
       <div className={styles.footer}>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 
