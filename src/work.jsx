@@ -3,7 +3,7 @@ import Navbar from "./components/navbar";
 import Cursor from "./components/cursor";
 import PleaseOpenInLaptop from "./components/PleaseOpenInLaptop";
 import DnChome from "./assets/DnChome.png";
-import calendifySS from "./assets/calendifySS.png";
+import CalendifySS from "./assets/CalendifySS.png";
 import FRAM1 from "./assets/FRAM1.png";
 // import FRAM2 from "./assets/FRAM2.png";
 // import FRAM3 from "./assets/FRAM3.png";
@@ -65,7 +65,7 @@ function Work() {
         </div>
         <div className="single reverse">
           <div className="single-img">
-            <img src={calendifySS} alt="" />
+            <img src={CalendifySS} alt="" />
           </div>
           <div className="single-detail">
             <h4>Calendify</h4>
