@@ -1,6 +1,6 @@
 import Navbar from "./components/navbar";
 import Cursor from "./components/cursor";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./CP.module.css"; // Importing modular CSS
 import GitAvatar from "./assets/GitAvatar.png"; // Importing image from the assets folder
 import CFLogo from "./assets/CFLogo.webp"; // Importing image from the assets folder
@@ -17,6 +17,7 @@ import PleaseOpenInLaptop from "./components/PleaseOpenInLaptop";
 
 const CP = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [values, setValues] = useState([]);
 
   const recentAC = ["Problem 1", "Problem 2", "Problem 3", "Problem 4"];
   const recentWA = ["Problem A", "Problem B", "Problem C", "Problem D"];
@@ -39,17 +40,23 @@ window.location.href="https://en.wikipedia.org/wiki/International_Collegiate_Pro
 }
 const startDate = subYears(new Date(), 1);
 const endDate = new Date();
-const values = [];
-let currentDate = startDate;
-
-while (isBefore(currentDate, endDate)) {
-  values.push({
-    date: format(currentDate, "yyyy-MM-dd"),
-    count: Math.floor(Math.random() * 5)
-  });
-  currentDate = new Date(currentDate.setDate(currentDate.getDate() + 1));
-}
-
+useEffect(() => {
+  // Create a new array to hold values
+  const newValues = [];
+  // Create a new currentDate variable inside useEffect to avoid mutating the outer scope
+  let currentDate = new Date(startDate.getTime());
+  
+  while (isBefore(currentDate, endDate)) {
+    newValues.push({
+      date: format(currentDate, "yyyy-MM-dd"),
+      count: Math.floor(Math.random() * 5 - 2)
+    });
+    currentDate = new Date(currentDate.setDate(currentDate.getDate() + 1));
+  }
+  
+  // Update the state with the new array
+  setValues(newValues);
+}, []);
   return (
     <div className={styles.container}>
       <Navbar />

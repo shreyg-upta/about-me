@@ -5,9 +5,9 @@ import PleaseOpenInLaptop from "./components/PleaseOpenInLaptop";
 import DnChome from "./assets/DnChome.png";
 import calendifySS from "./assets/calendifySS.png";
 import FRAM1 from "./assets/FRAM1.png";
-import FRAM2 from "./assets/FRAM2.png";
-import FRAM3 from "./assets/FRAM3.png";
-import FRAM4 from "./assets/FRAM4.png";
+// import FRAM2 from "./assets/FRAM2.png";
+// import FRAM3 from "./assets/FRAM3.png";
+// import FRAM4 from "./assets/FRAM4.png";
 import PortfolioWebsite from "./assets/PortfolioWebsite.png";
 import DisCo from "./assets/DisCo.png";
 

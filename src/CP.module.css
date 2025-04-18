@@ -198,6 +198,18 @@
   fill: #393939; /* No contributions */
 }
 
+.colorScale-1 {
+  fill: #393939; /* Lightest green */
+}
+
+.colorScale-2 {
+  fill: #393939; /* Lightest green */
+}
+
+.colorScale-3 {
+  fill: #393939; /* Lightest green */
+}
+
 .colorScale0 {
   fill: #82e68e; /* Lightest green */
 }
@@ -251,9 +263,4 @@
 
 .filterBtn.colorScale4 {
   border-color: #216e39;
-}
-svg.react-calendar-heatmap text {
-  font-size: 1px !important;
-  fill: #000000;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
