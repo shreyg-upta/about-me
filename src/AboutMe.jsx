@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as styles from "./AboutMe.module.css";
 import Footer from "./components/footer.jsx";
 import 'smoothscroll-polyfill';
@@ -16,6 +17,7 @@ function AboutMe() {
   const emailInputRef = useRef(null);
   const thankYouRef = useRef(null);
   const inputRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -34,7 +36,9 @@ function AboutMe() {
       inputRef.current.focus(); // Focus on the input field after 2 seconds
     }, 2000);
   };
-
+  const handleClictalk = () => {
+    navigate('/talk');
+  };
   const handleNameKeyPress = (e) => {
     if (e.key === 'Enter' && name.trim() !== '') {
       setShowEmailInput(true);
@@ -92,7 +96,7 @@ function AboutMe() {
             <h2>Hi. I am<span className={styles.shrey}> Shrey.</span></h2>
             <p>
               <b>
-                I'm a second-year undergrad at BITS Pilani - Goa, pursuing BE in
+                I'm a final year undergrad at BITS Pilani - Goa, pursuing BE in
                 computer science with a minor in Finance.
               </b>
             </p>
@@ -151,7 +155,8 @@ function AboutMe() {
               {showThankYou && (
                 <>
                   <br /><br />
-                  <span className={styles.showTha} ref={thankYouRef} tabIndex="-1">Thanks. I'll contact you soon.</span>
+                  <span className={styles.showTha} ref={thankYouRef} tabIndex="-1">Thanks. I'll contact you soon. In the meanwhile you can try talking to ShreyGPT</span>
+                  <button className={styles.shreygpt} onClick={handleClictalk}>Talk with ShreyGPT</button>                
                 </>
               )}
             </p>

@@ -115,7 +115,7 @@
   background-color: #212121;
   border-radius: 10px;
   padding: 20px;
-  width: 28%;
+  width: 45%;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
@@ -209,7 +209,12 @@
 .colorScale-3 {
   fill: #393939; /* Lightest green */
 }
-
+.colorScale-4 {
+  fill: #393939; /* Lightest green */
+}
+.colorScale-5 {
+  fill: #393939; /* Lightest green */
+}
 .colorScale0 {
   fill: #82e68e; /* Lightest green */
 }

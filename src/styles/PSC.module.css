@@ -1,0 +1,232 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-bottom: -30px;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .circleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .circleProgress {
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .circleProgress:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Animation for drawing the circle */
+  @keyframes drawCircle {
+    0% {
+      stroke-dashoffset: 270;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  .animateCircle .backgroundArc {
+    animation: drawCircle 1s ease-out forwards;
+  }
+  
+  .animateCircle .progressArc {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: 1s;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .progressGreen, .progressYellow, .progressRed {
+    transition: stroke-width 0.3s ease;
+  }
+  
+  .circleProgress:hover .progressGreen,
+  .circleProgress:hover .progressYellow,
+  .circleProgress:hover .progressRed {
+    stroke-width: 12px;
+  }
+  
+  .percentageText {
+    font-size: 28px;
+    font-weight: bold;
+    fill: #fff;
+  }
+  
+  .totalText {
+    font-size: 18px;
+    fill: #0ba300;
+  }
+  
+  .percentText {
+    font-size: 14px;
+    fill: #eee;
+  }
+  
+  .statusText {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  
+  .greenText {
+    color: #00cc66;
+    display: flex;
+    align-items: center;
+  }
+  
+  .grayText {
+    color: #888;
+    display: flex;
+    align-items: center;
+  }
+  
+  .statistics {
+    width: 75%;
+    margin-top: -30px; 
+  }
+  
+  .statRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    background-color: #2a2a2a;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .statRow:hover {
+    background-color: #333;
+    transform: translateX(5px);
+  }
+  
+  .easyText {
+    color: #00cc66;
+    font-weight: bold;
+  }
+  
+  .mediumText {
+    color: #ffcc00;
+    font-weight: bold;
+  }
+  
+  .hardText {
+    color: #ff4b4b;
+    font-weight: bold;
+  }
+  
+  .statValue {
+    color: #ddd;
+  }
+  
+  /* Hover effect with additional info */
+  .hoverInfo {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 4px 8px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .statRow:hover .hoverInfo {
+    opacity: 1;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+      max-width: 320px;
+    }
+    
+    .circleProgress {
+      width: 160px;
+      height: 160px;
+    }
+    
+    .title {
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 10px;
+      max-width: 280px;
+    }
+    
+    .circleProgress {
+      width: 140px;
+      height: 140px;
+    }
+    
+    .statistics {
+      font-size: 14px;
+    }
+    
+    .title {
+      font-size: 1.2rem;
+    }
+    
+    .statusText {
+      flex-direction: column;
+      gap: 5px;
+      align-items: center;
+    }
+  }
+  
+  /* Animation for stats row on load */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .statRow:nth-child(1) {
+    animation: slideIn 0.5s ease forwards;
+    animation-delay: 1.2s;
+  }
+  
+  .statRow:nth-child(2) {
+    animation: slideIn 0.5s ease forwards;
+    animation-delay: 1.4s;
+  }
+  
+  .statRow:nth-child(3) {
+    animation: slideIn 0.5s ease forwards;
+    animation-delay: 1.6s;
+  }
