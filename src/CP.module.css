@@ -120,6 +120,17 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
+.calendar {
+  margin-bottom: 20px;
+  text-align: flex-start;
+  color:aliceblue;
+  background-color: #212121;
+  border-radius: 10px;
+  padding: 20px;
+  width: 96%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
 /* Tab Section */
 .tabSection {
   background-color: #212121;
@@ -176,19 +187,17 @@
 
 }
 
-.calendar {
-  margin-bottom: 20px;
-  text-align: flex-start;
-  color:aliceblue;
-  background-color: #212121;
-  border-radius: 10px;
-  padding: 20px;
-  width: 96%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+.chartSection {
+  width: 82%;
+  max-height:fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-
-
+.chartSection > div {
+  /* flex: 1 1 300px;
+  min-width: 300px; */
+}
 
 
 

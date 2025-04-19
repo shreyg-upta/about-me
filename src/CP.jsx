@@ -12,6 +12,8 @@ import trophy from "./assets/trophy.svg"; // Importing image from the assets fol
 import { subYears, isBefore, format } from "date-fns";
 import CalendarHeatmap from "react-calendar-heatmap";
 import PleaseOpenInLaptop from "./components/PleaseOpenInLaptop";
+// import Example from "./components/LineChart"
+import ShreyChart from "./components/LineChart";
 // import {ReactTooltip} from "react-tooltip";
 
 const CP = () => {
@@ -125,10 +127,13 @@ const CP = () => {
               <p className={styles.rating}>1853, Expert</p>
               <p>Contest Given: 123</p>
               <p>Top: 0.5%</p>
+              {/* <div className={styles.chartSection}>
+      <ShreyChart />
+      </div> */}
             </div>
             <div className={styles.statCard}>
-             <h3>Solved Problems</h3>
-                {/*<p className={styles.solved}>60/3253 Solved</p>
+              <h3>Solved Problems</h3>
+              {/*<p className={styles.solved}>60/3253 Solved</p>
               <p>Easy: 24/818</p>
               <p>Medium: 34/1707</p>
               <p>Hard: 2/728</p> */}
@@ -195,6 +200,11 @@ const CP = () => {
               ))}
             </div>
             <div className={styles.tabContent}>
+              {tabs[activeTab].title === "Codeforces" && (
+                <div className={styles.chartSection}>
+                  <ShreyChart />
+                </div>
+              )}
               <ul>
                 {tabs[activeTab].content.map((item, idx) => (
                   <li key={idx}>{item}</li>
